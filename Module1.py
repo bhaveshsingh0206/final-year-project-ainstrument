@@ -8,6 +8,8 @@ class VocalExtraction:
     def __init__(self,  song, songName):
         self.song = song
         self.songName = songName
+        self.destinationPath = ''
+        self.extractedDestinationPath = ''
     
     def extractVocal(self):
         print("Extracting Vocals......")
@@ -18,14 +20,16 @@ class VocalExtraction:
     
     def trimExtractedVocal(self):
         print('Trimming the extracted vocals.....')
-        samplingFrequency, signalData = wavfile.read('./output/'+self.songName+'/vocals.wav')
+        self.extractedDestinationPath = './output/'+self.songName+'/vocals.wav'
+        samplingFrequency, signalData = wavfile.read(self.extractedDestinationPath)
         songData = []
         for i in tqdm(signalData):
             if abs(i[0])+abs(i[1])>20:
                 songData.append(i)
         songData = np.array(songData)
         songData = songData.astype(np.int16)
-        wavfile.write('./Songs/ExtractedVocals/'+self.songName+'.wav', samplingFrequency, songData)
+        self.destinationPath = './Songs/TrimmedVocals/'+self.songName+'.wav'
+        wavfile.write(self.destinationPath, samplingFrequency, songData)
         print('Module 1 Completed!!!!!')
 
 
