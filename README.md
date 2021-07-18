@@ -41,9 +41,13 @@
 
 ## React Screenshots
 
+### System Architecture
+
+![architeture](images/0.png)
+
 ### Landing
 
-![Login](images/5.png)
+![landing](images/5.png)
 
 ### Login
 
