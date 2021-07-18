@@ -1,0 +1,94 @@
+<div id="loader" class="container-fluid text-center loader-container none">
+  <div class="loader"></div>
+  <div class="load-message">
+    <p>Loading your profile</p>
+  </div>
+</div>
+<div id="profileContainer" class="container-fluid">
+  <div>
+    <ul class="topnav" id="myTopnav">
+      <li class="logo">
+        <a href="javascript:void(0);" class="alogo">AInstrument</a>
+      </li>
+      <li style="margin-left: 60px">
+        <a class="violin" href="http://localhost:4200/dashboard#violin"
+          >Violin</a
+        >
+      </li>
+      <li>
+        <a href="http://localhost:4200/dashboard#guitar" class="guitar"
+          >Trumpet</a
+        >
+      </li>
+      <li class="piano">
+        <a href="http://localhost:4200/dashboard#flute" class="flute">Flute</a>
+      </li>
+      <li>
+        <a href="profile">
+          <img
+            style="width: 18px; height: 18px"
+            src="../../../assets/img/user.png"
+            alt="Logout"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="#" (click)="onLogoutClick()">
+          <img
+            style="width: 18px; height: 18px"
+            src="../../../assets/img/power.png"
+            alt="Logout"
+          />
+        </a>
+      </li>
+      <a
+        href="javascript:void(0);"
+        style="font-size: 15px"
+        class="icon"
+        (click)="myFunction()"
+        >&#9776;</a
+      >
+    </ul>
+  </div>
+  <div class="profile-container">
+    <div class="profile">
+      <div class="profile-left">
+        <img
+          src="http://i.dailymail.co.uk/i/pix/tm/2007/07/lionking1807_468x325._to_468x312jpeg"
+          alt="Admin"
+        />
+        <p id="username">Ali</p>
+        <p id="email">ali@1234</p>
+      </div>
+      <div class="profile-right">
+        <app-active-list
+          [tracks]="track_list"
+          (playSong)="playSong($event)"
+        ></app-active-list>
+      </div>
+    </div>
+    <div class="player">
+      <div id="info" class="info">
+        <span id="trackName" class="trackName">Kabira</span>
+        <div class="durations">
+          <span class="current-time">00:00</span>
+          <span class="total-duration">00:00</span>
+        </div>
+
+        <div class="progress-bar">
+          <div id="progress-bar" class="bar"></div>
+        </div>
+      </div>
+      <div id="control-panel" class="control-panel">
+        <div class="album-art"></div>
+        <div class="controls">
+          <div id="prev" (click)="prevTrack()" class="prev"></div>
+          <div id="play" (click)="play()" class="play"></div>
+          <div id="next" (click)="nextTrack()" class="next"></div>
+          <div (click)="reload()" class="reload"></div>
+          <div class="download"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

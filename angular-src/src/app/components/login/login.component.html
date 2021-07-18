@@ -1,0 +1,88 @@
+<div id="loader" class="container-fluid text-center loader-container none">
+  <div class="loader"></div>
+  <div class="load-message">
+    <p>Logging in</p>
+  </div>
+</div>
+<div class="limiter">
+  <div id="loginContainer" class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="../../../assets/img/img-01.png" alt="IMG" />
+      </div>
+
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onLoginSubmit()"
+        class="login100-form validate-form"
+      >
+        <span class="login100-form-title"> Member Login </span>
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Valid email is required: ex@abc.xyz"
+        >
+          <input
+            class="input100 form-control"
+            type="text"
+            name="email"
+            placeholder="Email"
+            autofocus="true"
+            formControlName="email"
+            id="email"
+            autocomplete="off"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Password is required"
+        >
+          <input
+            class="input100 form-control"
+            type="password"
+            name="password"
+            placeholder="Password"
+            formControlName="password"
+            id="password"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="error" id="error"><span></span></div>
+
+        <div class="container-login100-form-btn">
+          <button
+            class="login100-form-btn"
+            [disabled]="loginForm.invalid"
+            type="submit"
+            name="login"
+          >
+            Login
+          </button>
+        </div>
+
+        <!-- <div class="text-center p-t-15">
+          <span class="txt1"> Forgot </span>
+          <a class="txt2" href="#"> Username / Password? </a>
+        </div> -->
+
+        <div class="text-center p-t-136">
+          <a class="txt2" href="#" [routerLink]="['/register']">
+            Create your Account
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--===============================================================================================-->

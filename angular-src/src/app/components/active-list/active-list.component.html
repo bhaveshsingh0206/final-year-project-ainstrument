@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <input
+    #box
+    (keyup)="searchSong(box.value)"
+    placeholder="Recently Converted"
+  /><i class="fa fa-search"></i>
+  <ul class="list-group">
+    <a
+      *ngFor="let track of tracks"
+      href="#"
+      class="list-group-item"
+      (click)="onUserClick(track.songName, track.instrument)"
+    >
+      {{ track.songName }}
+      <span>{{ track.instrument }}</span>
+    </a>
+    <!-- <a href="#" class="list-group-item"> Tera Yaar Hoon Mein </a>
+    <a href="#" class="list-group-item"> Lut Gaye </a>
+    <a href="#" class="list-group-item"> Channa Mereya </a> -->
+    <a *ngIf="!tracks" class="list-group-item" href="#">
+      Sorry looks like you have no history...
+    </a>
+  </ul>
+</div>

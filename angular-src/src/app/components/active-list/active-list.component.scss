@@ -1,0 +1,39 @@
+ul {
+  overflow-y: scroll;
+  margin: 15px 0px 0px 20px;
+  width: 60%;
+
+  @media only screen and (min-width: 768px) {
+    overflow-y: scroll;
+  }
+
+  a.list-group-item {
+    border-right: none;
+    border-left: none;
+    span {
+      float: right;
+      font-weight: 500;
+    }
+  }
+}
+
+.wrapper input {
+  padding: 6px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  margin-top: 8px;
+  margin-left: 20px;
+  font-size: 15px;
+  width: 60%;
+}
+.wrapper input:focus {
+  outline: none;
+  border-color: #2c3e50;
+}
+
+.wrapper {
+  // background-color: #999;
+  position: relative;
+  height: 100%;
+}

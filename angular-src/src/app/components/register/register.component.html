@@ -1,0 +1,134 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-register100">
+      <div class="register100-pic js-tilt" data-tilt>
+        <img src="../../../assets/img/img-01.png" alt="IMG" />
+      </div>
+
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="onRegisterSubmit()"
+        class="login100-form validate-form"
+        novalidate
+      >
+        <span class="login100-form-title"> Member Register </span>
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Valid email is required: ex@abc.xyz"
+        >
+          <input
+            class="input100 form-control"
+            type="text"
+            name="username"
+            placeholder="Username"
+            autofocus="true"
+            formControlName="username"
+            id="username"
+            autocomplete="off"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="message" *ngIf="registerForm.controls['username'].invalid">
+          Username must be atleast 3 charachters
+        </div>
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Valid email is required: ex@abc.xyz"
+        >
+          <input
+            class="input100 form-control"
+            type="text"
+            name="email"
+            placeholder="Email"
+            autofocus="true"
+            formControlName="email"
+            id="email"
+            autocomplete="off"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="message" *ngIf="registerForm.controls['email'].invalid">
+          Enter valid email: ex@abc.xyz
+        </div>
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Password is required"
+        >
+          <input
+            class="input100 form-control"
+            type="password"
+            name="password"
+            placeholder="Password"
+            formControlName="password"
+            id="password"
+            autocomplete="off"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="message" *ngIf="registerForm.controls['password'].invalid">
+          Password must be atleast 6 charachters
+        </div>
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Password is required"
+        >
+          <input
+            class="input100 form-control"
+            type="password"
+            name="confirmPass"
+            placeholder="Re-Enter Password"
+            formControlName="confirmPass"
+            id="confirmPass"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="error" id="error"><span></span></div>
+
+        <div class="container-login100-form-btn">
+          <button
+            class="login100-form-btn"
+            [disabled]="registerForm.invalid"
+            type="submit"
+            name="register"
+          >
+            Register
+          </button>
+        </div>
+
+        <!-- <div class="text-center p-t-15">
+          <span class="txt1"> Forgot </span>
+          <a class="txt2" href="#"> Username / Password? </a>
+        </div> -->
+
+        <div class="text-center p-t-96">
+          <a class="txt2" href="#" [routerLink]="['/login']">
+            Already have an account?
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--===============================================================================================-->

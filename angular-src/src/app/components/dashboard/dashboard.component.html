@@ -1,0 +1,148 @@
+<div id="loader" class="container-fluid text-center loader-container none">
+  <div class="loader"></div>
+  <div class="load-message">
+    <p>Song conversion in</p>
+    <p id="load-time">10</p>
+    <p>mins</p>
+  </div>
+</div>
+<div class="" fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+  <div class="section body1">
+    <div>
+      <ul class="topnav" id="myTopnav">
+        <li class="logo">
+          <a href="javascript:void(0);" class="alogo">AInstrument</a>
+        </li>
+        <li style="margin-left: 60px">
+          <a class="violin activated" (click)="active($event)" href="#violin"
+            >Violin</a
+          >
+        </li>
+        <li>
+          <a href="#guitar" class="guitar" (click)="active($event)">Trumpet</a>
+        </li>
+        <li class="piano">
+          <a href="#flute" class="flute" (click)="active($event)">Flute</a>
+        </li>
+        <li>
+          <a href="profile" (click)="openProfile()">
+            <img
+              style="width: 20px; height: 20px"
+              src="../../../assets/img/user.png"
+              alt="Logout"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#" (click)="onLogoutClick()">
+            <img
+              style="width: 20px; height: 20px"
+              src="../../../assets/img/power.png"
+              alt="Logout"
+            />
+          </a>
+        </li>
+        <a
+          href="javascript:void(0);"
+          style="font-size: 15px"
+          class="icon"
+          (click)="myFunction()"
+          >&#9776;</a
+        >
+      </ul>
+    </div>
+
+    <!-- VIOLIN INSTRUMENT  -->
+
+    <div class="container1">
+      <div class="title">Violin</div>
+      <div class="subtitle">
+        <em>“ Music is capable of changing the world ”</em>
+      </div>
+    </div>
+    <form
+      [formGroup]="violinInput"
+      (ngSubmit)="onViolinSubmit()"
+      enctype="multipart/form-data"
+    >
+      <div class="buttons">
+        <button class="inputbtn" type="button">
+          <input
+            class="custom-input-file"
+            type="file"
+            name="file"
+            formControlName="file"
+            (change)="onFileChange($event)"
+          />
+        </button>
+        <button class="infobtn">Create</button>
+      </div>
+    </form>
+    <a href="#guitar" class="arrow">
+      <i class="fa fa-angle-down"></i>
+    </a>
+  </div>
+
+  <!-- TRUMPET INSTRUMENT -->
+
+  <div class="section body2">
+    <div class="container2">
+      <div class="title2">Trumpet</div>
+      <div class="subtitle">
+        <em>“ Music is the strongest form of magic ”</em>
+      </div>
+    </div>
+    <form
+      [formGroup]="trumpetInput"
+      (ngSubmit)="onTrumpetSubmit()"
+      enctype="multipart/form-data"
+    >
+      <div class="buttons">
+        <!-- <button class="inputbtn">Choose song</button> -->
+        <button class="inputbtn" type="button">
+          <input
+            class="custom-input-file"
+            type="file"
+            name="file"
+            formControlName="file"
+            (change)="onFileChange($event)"
+          />
+        </button>
+        <button class="infobtn">Create</button>
+      </div>
+    </form>
+    <a href="#flute" class="arrow">
+      <i class="fa fa-angle-down"></i>
+    </a>
+  </div>
+
+  <!-- FLUTE INSTRUMENT -->
+
+  <div class="section body3">
+    <div class="container3">
+      <div class="title">Flute</div>
+      <div class="subtitle">
+        <em>“ Where words fail, music speaks loud ”</em>
+      </div>
+    </div>
+    <form
+      [formGroup]="fluteInput"
+      (ngSubmit)="onFluteSubmit()"
+      enctype="multipart/form-data"
+    >
+      <div class="buttons">
+        <!-- <button class="inputbtn">Choose song</button> -->
+        <button class="inputbtn" type="button">
+          <input
+            class="custom-input-file"
+            type="file"
+            name="file"
+            formControlName="file"
+            (change)="onFileChange($event)"
+          />
+        </button>
+        <button class="infobtn">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
