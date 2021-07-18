@@ -39,7 +39,7 @@
 - Very robust and high fidelity audio synthesis system.
 - This system will remove the dependency of the instrument learning process of callow students on musicians.
 
-## React Screenshots
+## Screenshots
 
 ### System Architecture
 
