@@ -24,9 +24,11 @@
 
 3. DDSP: Differentiable Digital Signal Processing
 
-4. Data stored in Firebase
+4. Spleeter
+ 
+5.  Data stored in Firebase
 
-5. Spleeter
+
 
 ### Features
 
@@ -62,4 +64,4 @@
 ![Profile](images/3.png)
 ![Profile](images/4.png)
 
-#### [View the Research paper here](https://www.ijraset.com/fileserve.php?FID=33953)
+#### [View the Research paper here](https://www.researchgate.net/publication/351324421_A_Instrument_-_A_System_for_Generating_Instrumental_Covers)
